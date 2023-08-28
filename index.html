@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./style.css">
+    <title>ShotMan GameProject</title>
+</head>
+
+
+<body>
+    <h1 class="titleProject">ShotMan GameProject</h1>
+    <audio controls id="mySound" hidden>
+        <source src="./sounds/m134 sounds.mp3" type="audio/mp3">
+    </audio>
+    <img id="gun" src="./images/M134.png" alt="M134">
+    <div class="container">
+
+        <div class="draw line with svg">
+            <svg id="drawSvg" height="100vh" width="1000px">
+
+
+                <circle class="bodyPartsFace" cx="340" cy="60" r="2" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsFace" cx="360" cy="60" r="2" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsFace" cx="350" cy="70" r="2" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsFace" cx="350" cy="70" r="40" stroke="black" stroke-width="2" fill="none" />
+                <line class="bodyPartsFace" x1="330" y1="90" x2="370" y2="90" />
+                <line class="bodyParts fat" x1="350" y1="120" x2="350" y2="300" />
+                <line class="bodyParts" x1="380" y1="200" x2="600" y2="250" />
+                <line class="bodyParts" x1="370" y1="300" x2="370" y2="500" />
+                <line class="bodyParts" x1="330" y1="300" x2="330" y2="500" />
+                <line class="bodyParts" x1="320" y1="200" x2="100" y2="250" />
+                <!--drawing the guy with the gun-->
+
+                <circle class="bodyPartsGun" cx="900" cy="110" r="40" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsGun" cx="910" cy="100" r="2" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsGun" cx="890" cy="100" r="2" stroke="black" stroke-width="2" fill="none" />
+                <circle class="bodyPartsGun" cx="900" cy="115" r="2" stroke="black" stroke-width="2" fill="none" />
+                <line class="bodyPartsGun" x1="880" y1="130" x2="920" y2="130" />
+                <line class="bodyPartsGun" x1="330" y1="90" x2="370" y2="90" />
+                <line class="bodyPartsGun" x1="900" y1="150" x2="900" y2="400" />
+                <line class="bodyPartsGun" x1="900" y1="150" x2="900" y2="400" />
+                <line class="bodyPartsGun" x1="900" y1="200" x2="800" y2="200" />
+                <line class="bodyPartsGun" x1="900" y1="220" x2="800" y2="220" />
+                <line class="bodyPartsGun" x1="900" y1="300" x2="800" y2="400" />
+                <line class="bodyPartsGun" x1="900" y1="300" x2="1000" y2="400" />
+            </svg>
+
+        </div>
+        <div class="gameProjcet">
+
+            <div id="wrong-letter">
+
+                <p id="hint-text"></p>
+
+
+                <h3 id="guesses-text">
+                    Incorrect guesses:
+                    <b> 0 / 5</b>
+                </h3>
+                <ul id="word-display">
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <li class="letter"></li>
+                    <!--draw-letter heres-->
+
+                </ul>
+                <p id="wrongLetter">wrong Letter:</p>
+                <p id="randomcondolence"></p>
+
+            </div>
+            <!--pop-container-->
+            <div class="popup-contianer" id="popUp">
+                <div class="popup">
+
+                    <h2 id="message"></h2>
+                    <button id="plyaAgainButton">Play Again</button>
+                </div>
+
+            </div>
+
+            <div class="cointaer-notification" id="cointaer-notification">
+                <span>you have already entered this letter</span>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="./world-list.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
