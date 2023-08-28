@@ -156,5 +156,4 @@ function clearAll() {
   });
   gun.style.display = "none";
   wrongletterArray = [];
-  console.log(wrongletterArray);
 }
