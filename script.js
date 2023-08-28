@@ -19,8 +19,8 @@ let { word, hint } = worldList[Math.floor(Math.random() * worldList.length)];
 let wordChhosen = word;
 
 // array for current letter or uncurrent
-const wrongletterArray = [];
-const correctletter = [];
+let wrongletterArray = [];
+let correctletter = [];
 /// keyDown keyboard
 document.addEventListener("keydown", keyboardLetter);
 const lowerCaseRext = /[a-z]/;
@@ -146,8 +146,8 @@ function removeAllElements(event) {
   console.log(wordChhosen, hint);
 }
 function clearAll() {
-  count == 0;
-  guessestext.innerHTML = `Incorrect guesses:<b> ${count - 1} / 5</b>`;
+  count = 0;
+  guessestext.innerHTML = `Incorrect guesses:<b> ${count} / 5</b>`;
   randomcondolence.innerText = "";
   fat.style.display = "none";
 
@@ -155,4 +155,6 @@ function clearAll() {
     value.style.display = "none";
   });
   gun.style.display = "none";
+  wrongletterArray = [];
+  console.log(wrongletterArray);
 }
