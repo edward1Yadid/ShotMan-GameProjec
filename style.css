@@ -18,7 +18,7 @@ body {
 
     }
 
-    img {
+    #gun {
         width: 100px;
         height: 100px;
         position: absolute;
@@ -86,28 +86,7 @@ body {
 
 
 
-    .bodyPartsFace {
-        display: block !important;
 
-    }
-
-    .fat {
-        stroke-width: 70;
-        stroke-dasharray: 200;
-
-        animation: drawLine 3s ease-in-out forwards;
-    }
-
-    @keyframes drawLine {
-        from {
-            stroke-dashoffset: 200;
-            /* The length of the line */
-        }
-
-        to {
-            stroke-dashoffset: 0;
-        }
-    }
 
     .container {
 
