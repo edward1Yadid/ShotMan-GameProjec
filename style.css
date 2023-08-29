@@ -84,17 +84,7 @@ body {
     }
 
 
-    line,
-    circle {
 
-        fill: transparent;
-        stroke: black;
-        stroke-width: 4px;
-        stroke-dasharray: 10;
-        stroke: rgb(16, 197, 16);
-        stroke-width: 2px;
-        stroke-dasharray: 400;
-    }
 
     .bodyPartsFace {
         display: block !important;
