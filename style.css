@@ -24,7 +24,7 @@ body {
         position: absolute;
         left: 770px;
         top: 240px;
-        display: none;
+
     }
 
     .draw {
@@ -86,7 +86,7 @@ body {
 
     line,
     circle {
-        display: none;
+
         fill: transparent;
         stroke: black;
         stroke-width: 4px;
