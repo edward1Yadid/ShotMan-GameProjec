@@ -91,7 +91,7 @@ function UpdateWrongLetter(letterKey) {
     if (index < count) {
       parts.style.display = "block";
     } else {
-      // parts.style.display = "none";
+      parts.style.display = "none";
     }
   });
 
@@ -149,11 +149,11 @@ function clearAll() {
   count = 0;
   guessestext.innerHTML = `Incorrect guesses:<b> ${count} / 5</b>`;
   randomcondolence.innerText = "";
-  // fat.style.display = "none";
+  fat.style.display = "none";
 
   bodyPartsGun.forEach((value) => {
-    // value.style.display = "none";
+    value.style.display = "none";
   });
-  // gun.style.display = "none";
+  gun.style.display = "none";
   wrongletterArray = [];
 }
