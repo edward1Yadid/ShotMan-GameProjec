@@ -1,4 +1,3 @@
-// DOM elements
 const worddisplay = document.getElementById("word-display");
 const wrongLetter = document.getElementById("wrong-letter");
 const letter = document.querySelector(".letter");
@@ -14,28 +13,24 @@ const fat = document.querySelector(".fat");
 const cointaernotification = document.getAnimations("cointaer-notification");
 const hinttext = document.getElementById("hint-text");
 
-// Random word and hint
+//radnom word and hint
 let { word, hint } = worldList[Math.floor(Math.random() * worldList.length)];
+
 let wordChhosen = word;
 
-// Arrays for correct and wrong letters
+// array for current letter or uncurrent
 let wrongletterArray = [];
 let correctletter = [];
-
-// Keyboard event listener
+/// keyDown keyboard
 document.addEventListener("keydown", keyboardLetter);
-
-// Regular expression for lowercase letters
 const lowerCaseRext = /[a-z]/;
-
-// Handle keyboard letter presses
 function keyboardLetter(event) {
   if (event.key === event.key.toLowerCase() && event.key.match(lowerCaseRext)) {
     const letterKey = event.key;
-
-    // Condition for only lowercase
+    // conditon for only loewrCse
     if (wordChhosen.includes(letterKey)) {
       if (!correctletter.includes(letterKey)) {
+        // check if the letter pressed twice for push to awway only once
         correctletter.push(letterKey);
       }
       showTheWorld();
@@ -50,24 +45,26 @@ function keyboardLetter(event) {
   }
 }
 
-// Display the word with correct letters
+hinttext.innerHTML = `question: ${hint} `;
 function showTheWorld() {
+  console.log(correctletter);
   let li = "";
   wordChhosen.split("").map((value) => {
-    li += `<li class="letter">${
+    li += ` <li class="letter">${
       correctletter.includes(value) ? value : ""
     }</li>`;
-  });
+  }); // check if the letter includs in the word and if yes the letter is visiblei if not the letter is disible
   worddisplay.innerHTML = li;
   const clearLetter = worddisplay.innerText.replace(/\n/g, "");
   if (wordChhosen == clearLetter) {
     winMessage.innerText =
-      "Congratulations on an amazing win!, because of you I'm alive🤣";
+      "Congratulations on an amazing win!, because of you i'm alive🤣";
     popUp.style.display = "flex";
   }
 }
 
-// Display a notification
+// popUp notification
+
 function notification() {
   const notification = document.getElementById("cointaer-notification");
   notification.style.display = "flex";
@@ -77,15 +74,18 @@ function notification() {
   }, 2000);
 }
 
-// Update incorrect letters and display condolence line
+// update letterUcorrect
+let count = 0;
 function UpdateWrongLetter(letterKey) {
-  wrongletterArray.push(letterKey);
+  wrongletterArray.push(letterKey); // push to array the wrong letter
   wrongL.innerHTML = `wrong Letter:${wrongletterArray.join("")}`;
   count = wrongletterArray.length;
   guessestext.innerHTML = `Incorrect guesses:<b> ${count} / 5</b>`;
   const condolenceChhosen =
     condolence[Math.floor(Math.random() * condolence.length)];
-  randomline.innerHTML = `condolence:<br/>${condolenceChhosen}`;
+  randomline.innerHTML = `condolence:
+    <br/>
+  ${condolenceChhosen}`;
 
   bodyParts.forEach((parts, index) => {
     if (index < count) {
@@ -97,7 +97,7 @@ function UpdateWrongLetter(letterKey) {
 
   if (count == 5) {
     setTimeout(() => {
-      winMessage.innerText = "Game over, man! Game over!, I'm dead🤣";
+      winMessage.innerText = "Game over, man! Game over!, i'm dead🤣";
       popUp.style.display = "flex";
     }, 3000);
     playAudio();
@@ -110,14 +110,16 @@ function UpdateWrongLetter(letterKey) {
   }
 }
 
-// Update blessing line
+//undape condolence line or bleesing line
 function UpdateBlessLine() {
   const blessChhosen =
     blessingLines[Math.floor(Math.random() * blessingLines.length)];
-  randomline.innerHTML = `blessLine:<br/>${blessChhosen}`;
+  console.log(blessChhosen);
+  randomline.innerHTML = `blessLine:
+  <br/>
+  ${blessChhosen}`;
 }
 
-// Play audio
 let sound = document.getElementById("mySound");
 function playAudio() {
   sound.play();
@@ -125,28 +127,33 @@ function playAudio() {
 
 // Restart game and play again
 plyaAgainButton.addEventListener("click", removeAllElements);
-
-// Clear all game-related elements
+//  Empty arrays
 function removeAllElements(event) {
   popUp.style.display = "none";
 
   correctletter.splice(0, correctletter.length);
   wrongletterArray.splice(0, wrongletterArray.length);
 
+  console.log(correctletter, wrongletterArray);
+
   UpdateWrongLetter();
 
   clearAll();
-
   let { word, hint } = worldList[Math.floor(Math.random() * worldList.length)];
   wordChhosen = word;
   hinttext.innerHTML = `question: ${hint} `;
   showTheWorld();
+  console.log(wordChhosen, hint);
 }
-
-// Clear game-related variables and elements
 function clearAll() {
   count = 0;
   guessestext.innerHTML = `Incorrect guesses:<b> ${count} / 5</b>`;
   randomcondolence.innerText = "";
-  fat.style.display;
+  fat.style.display = "none";
+
+  bodyPartsGun.forEach((value) => {
+    value.style.display = "none";
+  });
+  gun.style.display = "none";
+  wrongletterArray = [];
 }
