@@ -130,7 +130,7 @@ plyaAgainButton.addEventListener("click", removeAllElements);
 //  Empty arrays
 function removeAllElements(event) {
   popUp.style.display = "none";
-
+  fat.style.stroke = "green";
   correctletter.splice(0, correctletter.length);
   wrongletterArray.splice(0, wrongletterArray.length);
 
