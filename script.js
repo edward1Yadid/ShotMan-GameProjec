@@ -30,7 +30,7 @@ function keyboardLetter(event) {
     // conditon for only loewrCse
     if (wordChhosen.includes(letterKey)) {
       if (!correctletter.includes(letterKey)) {
-        // check if the letter pressed twice for push to awway only once
+        // check if the letter pressed twice for push to array only once
         correctletter.push(letterKey);
       }
       showTheWorld();
@@ -53,7 +53,7 @@ function showTheWorld() {
     li += ` <li class="letter">${
       correctletter.includes(value) ? value : ""
     }</li>`;
-  }); // check if the letter includs in the word and if yes the letter is visiblei if not the letter is disible
+  }); // check if the letter includs in the word and if yes the letter is visible if not the letter is disible
   worddisplay.innerHTML = li;
   const clearLetter = worddisplay.innerText.replace(/\n/g, "");
   if (wordChhosen == clearLetter) {
