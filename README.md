@@ -8,7 +8,7 @@ Here's an example of an SVG created using HTML, CSS, and JavaScript. It includes
 
  <circle class="bodyPartsFace" cx="350" cy="70" r="40" stroke="black" stroke-width="2" fill="none" />
 <line class="bodyPartsFace" x1="330" y1="90" x2="370" y2="90" stroke="black" stroke-width="2"ill="none" />
-                    f
+                    
 ## Description
 
 This repository contains an SVG illustration depicting a face and a person holding a gun. The SVG is created using a combination of circles and lines to represent different features.
